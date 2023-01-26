@@ -15,13 +15,10 @@ string negCut = "atan(y2_st3/y2_st1)>1.2 && atan(y2_st3/y2_st1) <1.6&& z2_v > -3
 
 string dimuCut= "dz>0.0 && dz< 150.0&& abs(dx) < 0.262 && abs(dy-1.6) < 0.23 &&  abs(dpx) < 2.0 && abs(dpy) < 2.4 && dpz > 32.0 && dpz < 102.0 && abs(x1_st1 + x2_st1) < 30 && dpx*dpx + dpy*dpy < 4.5 && dx*dx + (dy-1.6)*(dy-1.6) < 0.06  && y1_st3*y2_st3 < 0 && nHits1 + nHits2 > 29 && nHits1St1 + nHits2St1 >8 &&chisq_dimuon>0.0&&chisq_dimuon<11.5&&(chisq1_dump+chisq2_dump-chisq_dimuon)<19.27&&";
 
-string physics = "xF > -0.18 && xF <0.94&& xT > 0.007 && xT <0.54 && mass>5.0 && mass <7.0 && pT <1.0 && D1<100";
-
-string extra= "&&mass<6.0&&costh<0.6";
-
+string physics = "xF > -0.18 && xF <0.94&& xT > 0.007 && xT <0.54 && mass>5.0 && mass <7.0 && pT <2.0 && D1<200";
 string trigger = "fpga1==1&&";
 //============Final Cut
-string cutRecoData = posCut+negCut+dimuCut+physics+extra; 
-string cutRecoMC= trigger +cutRecoData+"&&true_costh<0.7";
-string cutTrue = "true_pT<1.2 && true_mass>5.0 && true_mass<7.0"; 
+string cutRecoData = posCut+negCut+dimuCut+physics; 
+string cutRecoMC= trigger +cutRecoData";
+string cutTrue = "true_pT<2.0&&true_mass>5.0 && true_mass<7.0"; 
 #endif
